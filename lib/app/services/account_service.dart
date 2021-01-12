@@ -48,6 +48,6 @@ class AccountService extends ChangeNotifier {
   }
 
   void clearLocalAccountInfo() {
-    _account = null;
+    _account = User('');
   }
 }
