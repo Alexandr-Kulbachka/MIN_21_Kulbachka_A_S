@@ -1,0 +1,102 @@
+import 'package:HelpHere/style/app_color_scheme.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class AppTextField extends StatelessWidget {
+  final bool readOnly;
+  final bool enableSuggestions;
+  final bool autocorrect;
+  final bool obscureText;
+  final EdgeInsets margin;
+  final EdgeInsets padding;
+  final int maxLines;
+  final Color textColor;
+  final Color cursorColor;
+  final String labelText;
+  final double labelSize;
+  final Color labelColor;
+  final String errorText;
+  final double cursorWidth;
+  final double borderRadius;
+  final double borderWidth;
+  final Color enabledBorderColor;
+  final Color disabledBorderColor;
+  final TextEditingController fieldController;
+  final FocusNode fieldFocusNode;
+  final void Function(String text) onChanged;
+  final void Function() onTap;
+  final TextInputType keyboardType;
+
+  const AppTextField({
+    Key key,
+    this.readOnly = false,
+    this.padding,
+    this.maxLines = 1,
+    this.cursorColor,
+    this.labelText,
+    this.cursorWidth = 2.0,
+    this.fieldController,
+    this.fieldFocusNode,
+    this.labelSize = 22,
+    this.labelColor,
+    this.borderRadius = 5.0,
+    this.borderWidth = 2.0,
+    this.enabledBorderColor,
+    this.disabledBorderColor,
+    this.errorText,
+    this.onChanged,
+    this.onTap,
+    this.textColor,
+    this.enableSuggestions = true,
+    this.autocorrect = true,
+    this.obscureText = false,
+    this.margin,
+    this.keyboardType = TextInputType.text,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        margin: margin ?? EdgeInsets.all(0),
+        padding: padding ?? EdgeInsets.all(0),
+        child: TextField(
+          keyboardType: keyboardType,
+          obscureText: obscureText,
+          enableSuggestions: enableSuggestions,
+          autocorrect: autocorrect,
+          readOnly: readOnly,
+          controller: fieldController ?? TextEditingController(),
+          focusNode: fieldFocusNode ?? FocusNode(),
+          maxLines: maxLines,
+          style: TextStyle(
+              color: textColor ?? AppColorScheme.disabledElementColor),
+          cursorColor: cursorColor,
+          cursorWidth: cursorWidth,
+          decoration: InputDecoration(
+            labelText: labelText,
+            labelStyle: TextStyle(
+              fontSize: labelSize,
+              color: labelColor,
+            ),
+            errorText: errorText,
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderRadius),
+              borderSide: BorderSide(
+                width: borderWidth,
+                color: disabledBorderColor,
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderRadius),
+              borderSide: BorderSide(
+                width: borderWidth,
+                color: enabledBorderColor,
+                style: BorderStyle.solid,
+              ),
+            ),
+          ),
+          onChanged: onChanged,
+          onTap: onTap,
+        ));
+  }
+}

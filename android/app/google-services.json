@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "501655233596",
+    "firebase_url": "https://helphere-51c79.firebaseio.com",
+    "project_id": "helphere-51c79",
+    "storage_bucket": "helphere-51c79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501655233596:android:d70cb3420026d79d9a0f39",
+        "android_client_info": {
+          "package_name": "com.example.HelpHere"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501655233596-8a0ne9d7hkehhggbj1oakh5se6h8hi64.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvXkLDRVycHRP19bssWmIKu1nGEUpxZt8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501655233596-8a0ne9d7hkehhggbj1oakh5se6h8hi64.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
